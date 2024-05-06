@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
     <title>Document</title>
 </head>
 <body><style>
@@ -10,34 +13,46 @@
         background-image: url(./Asseerts/login.jpg);  
         background-size: cover; 
     }
-    table,h2{
+    /* table,h2{
         color: white;
 
+    } */
+    label,h2{
+        color: white;
     }
-    div :hover{
+    /* div :hover{
         color: darkblue;
-    }
+    } */
     
 </style>
 <h1 style="text-align: center;"><a href="./Login.html"><img src="./Asseerts/Index.png" width="40px"> </a> <u> Sports Academy</u></h1> 
 
-<h2>Login</h2>
-    <form action="#" method="get">
-        <table>
+<h2>Login</h2><br>
+    <form action="#" method="get" novalidate>
+        <div>
+            <label for="emailid">Email ID :</label>
+            <input type="text" required>
+        </div>
+        <div>
+            <label for="password">Password :</label>
+            <input type="password" required><br><br>
+        </div>
+        <a href="Homepage.html"><button type="button" class="btn btn-outline-info">Submit</button></a>
+        <a href="Register.html"><button type="button" class="btn btn-outline-info">Register</button></a>
+       
+        <!-- <table>
             <tr>
-               <td> Phone No :</td>
-               <td><input type="text"/></td>
+               <td> Email ID :</td >
+               <td class="input"><input type="text" required/></td>
             </tr>
             <tr>
                 <td> Password :</td>
-                <td><input type="password"/></td>
+                <td><input type="password" required/></td>
              </tr>
-        </table>
+        </table> -->
     </form>
     <br>
     <div>
-    <a href="Homepage.html"><input type="button" value="Submit"/></a>
-    <a href="Register.html"><input type="button" value="Register"/></a>
     </div>
 </body>
 </html>
