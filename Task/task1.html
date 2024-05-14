@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Postive and Negative</h2>
+        <div class="row my-4">
+            <div class="col"><label>Give the Number</label></div>
+            <div class="col"><input type="number" name="num" id="num" class="form-control" onkeyup="findposandnega()"/> </div> 
+            <div class="col"><span id="posNegMsg"></span></div>
+        </div>
+
+        <script>
+            function findposandnega(){
+                let num = Number(document.getElementById('num').value);
+                let posNegMsg = "";
+                if(num > 0){
+                    posNegMsg = "This is postive value";
+                }else if(num < 0){
+                    posNegMsg = "This is Negative value";
+                }else if(num == 0){
+                    posNegMsg = "Zero"
+                }
+                document.getElementById('posNegMsg').innerHTML = posNegMsg;
+            }
+        </script>
+    </div>
+    <div class="container">
+        <h2>Greatest Number of Two Number</h2>
+        <div class="row my-4">
+            <div class="col"><label>Check the Greated Number</label></div>
+            <div class="col"><input type="number" id="GN" class="form-control" onkeyup="GreatestNO()"/></div>
+            <div class="col"><input type="number" id="GN2" class="form-control" onkeyup="GreatestNO()"/></div>
+            <div class="col"><span id="GNMsg"></span></div>
+        </div>
+        <script>
+            function GreatestNO(){
+                let GN = Number(document.getElementById('GN').value);
+                let GN2 = Number(document.getElementById('GN2').value);
+                let GNMsg = "";
+                if(GN > GN2){
+                    GNMsg = "The Greater No is "+GN;
+                }else if (GN2 > GN){
+                    GNMsg = "The Greater NO is " +GN2;
+                }
+                document.getElementById('GNMsg').innerHTML = GNMsg;
+            }
+        </script>
+    </div>
+    <div  class="container">
+        <h2>Smallest Number of Three Number</h2>
+        <div class="row my-4 ">
+            <div class="col"><label>Check the Smallest Number</label></div>
+            <div class="Col"><input type="number" id="SN1" class="form-control" onkeyup="SmallestNO()"/></div>
+            <div class="Col"><input type="number" id="SN2" class="form-control" onkeyup="SmallestNO()"/></div>
+            <div class="Col"><input type="number" id="SN3" class="form-control" onkeyup="SmallestNO()"/></div>
+            <div class="col"><span id="SNoMsg"></span></div>
+        </div>
+        <script>
+            function SmallestNO(){
+                let SN1 = Number(document.getElementById('SN1').value);
+                let SN2 = Number(document.getElementById('SN2').value);
+                let SN3 = Number(document.getElementById('SN3').value);
+                let SNoMsg = "";
+                if(SN1 < SN2 && SN1 <SN3){
+                    SNoMsg = "The Smallest No is " +SN1;
+                }else if(SN2 < SN1 && SN2 < SN3){
+                    SNoMsg = "The Smallest No is " +SN2;
+                }else if(SN3 < SN2 && SN3 <SN1){
+                    SNoMsg = "The smallest No is "+SN3;
+                }
+                document.getElementById('SNoMsg').innerHTML = SNoMsg;
+            }
+        </script>
+    </div>
+    <div class="container">
+        <h2>Odd or Even</h2>
+        <div class="row my-4">
+            <div class="col"><label> Check the No is Odd OR Even</label></div>
+            <div class="col"><input type="number" id="OD" class="form-control" onkeyup="OddorEven()"/></div>
+            <div class="col"><span id="OddMsg"></span></div>
+        </div>
+        <script>
+            function OddorEven(){
+                let OD = Number(document.getElementById('OD').value);
+                let OddMsg = "";
+                if((OD%2)==0){
+                    OddMsg = "This is a Even NO";
+                }else if((OD%2)==1){
+                    OddMsg = "This is a Odd NO";
+                }
+                document.getElementById('OddMsg').innerHTML = OddMsg;
+            }
+        </script>
+    </div>
+    <div class="container">
+        <h2>Full Form of the Number</h2>
+        <div class="row my-4">
+            <div class="col"><input type="number" id="FFN" class="form-control" onkeyup="FFNO()"/></div>
+            <div class="col"><span id="FFMsg"></span></div>
+        </div>
+        <script>
+            function FFNO(){
+                let FFN = Number(document.getElementById('FFN').value);
+                let FFMsg = "";
+            if(FFN == 1){
+                FFMsg = "one";
+            }else if(FFN == 2){
+                FFMsg = "Two";
+            }else if(FFN == 3){
+                FFMsg = "Three";
+            }else if(FFN == 4){
+                FFMsg = "Four";
+            }else if(FFN == 5){
+                FFMsg = "Five";
+            }else if (FFN >5){
+                FFMsg = "Invaild NO"
+            }
+            document.getElementById('FFMsg').innerHTML = FFMsg;
+            }
+        </script>
+    </div>
+</body>
+</html>

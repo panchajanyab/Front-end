@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Bill Amount</h2>
+        <div class="row my-4">
+            <div class="col"><label>Bill Amount</label></div>
+            <div class="col"><input type="number" id="Amount" class="form-control" onkeyup="BillAMt()"/></div>
+            <div class="col"><span id="AmountMsg"></span></div>
+        </div>
+        <script>
+            function BillAMt(){
+                let Amount = Number(document.getElementById('Amount').value);
+                let AmountMsg = "";
+                if(Amount>2000){
+                    AmountMsg ="The final Amount is "+(Amount-(Amount*0.1));
+                }else if(Amount<2000){
+                    AmountMsg ="The final Amount is "+Amount;
+                }
+                document.getElementById('AmountMsg').innerHTML = AmountMsg;
+            }
+        </script>
+    </div>
+    <div class="container">
+        <div class="row my-4">
+            <h2>Salary and Experience</h2>
+            <div class="col"><label>Salary</label></div>
+            <div class="col"><input type="number" id="Salary" class="form-control" onkeyup="SalaryandExperience()"/></div>
+            <div class="col"><label>Experience</label></div>
+            <div class="col"><input type="number" id="Experience" class="form-control" onkeyup="SalaryandExperience()"/></div>
+            <div class="col"><label id="SalaryMsg"></label></div>
+        </div>
+        <script>
+            function SalaryandExperience(){
+                let Salary = Number(document.getElementById('Salary').value);
+                let Experience = Number(document.getElementById('Experience').value);
+                let SalaryMsg = "";
+                if(Salary > 30000 && Experience > 3){
+                    SalaryMsg = "The salary is "+(Salary+(Salary*0.3));
+                }else{
+                    SalaryMsg = "The salary is "+Salary;
+                }
+                document.getElementById('SalaryMsg').innerHTML = SalaryMsg
+            }
+        </script>
+    </div>
+    <div class="container">
+        <div class="row my-4">
+            <h2>Bill Amount and Payment Mode</h2>
+            <div class="col"><label>Bill Amount</label></div>
+            <div class="col"><input type="number" class="form-control" id="BillAmount" onchange="BAandPM()"/></div>
+            <div class="col"><label>Payment Mode</label>
+            <div class="col" ><select id="PayMode" class="form-control" onchange="BAandPM()"/>
+                                <option>--Select--</option>
+                                <option> Cash</option>
+                                <option>Card</option>
+                            </select>
+            </div>
+            <div class="col"><label id="Msg"></label></div>
+            </div>
+           <script>
+            function BAandPM(){
+                let BillAmount = Number(document.getElementById('BillAmount').value);
+                let PayMode = document.getElementById('PayMode').value;
+                let Msg = "";
+                if(PayMode){
+                    Msg = "The Amount is "+(BillAmount+(BillAmount*0.05));
+                }else if(PayMode){
+                    Msg = "The Amount is "+(BillAmount+(BillAmount*0.05*0.03));
+                }
+                document.getElementById('Msg').innerHTML = Msg;
+            }
+           </script>
+        </div>
+    </div>
+</body>
+</html>
