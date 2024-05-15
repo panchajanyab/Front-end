@@ -43,7 +43,7 @@
                 let Salary = Number(document.getElementById('Salary').value);
                 let Experience = Number(document.getElementById('Experience').value);
                 let SalaryMsg = "";
-                if(Salary > 30000 && Experience > 3){
+                if(Salary < 30000 && Experience > 3){
                     SalaryMsg = "The salary is "+(Salary+(Salary*0.3));
                 }else{
                     SalaryMsg = "The salary is "+Salary;
@@ -56,10 +56,10 @@
         <div class="row my-4">
             <h2>Bill Amount and Payment Mode</h2>
             <div class="col"><label>Bill Amount</label></div>
-            <div class="col"><input type="number" class="form-control" id="BillAmount" onchange="BAandPM()"/></div>
+            <div class="col"><input type="number" class="form-control" id="BillAmount" onkeyup="BAandPM()"/></div>
             <div class="col"><label>Payment Mode</label>
-            <div class="col" ><select id="PayMode" class="form-control" onchange="BAandPM()"/>
-                                <option>--Select--</option>
+            <div class="col" ><select id="PayMode" class="form-control" onchange="BAandPM()">
+                                <!-- <option>--Select--</option> -->
                                 <option> Cash</option>
                                 <option>Card</option>
                             </select>
@@ -71,14 +71,19 @@
                 let BillAmount = Number(document.getElementById('BillAmount').value);
                 let PayMode = document.getElementById('PayMode').value;
                 let Msg = "";
-                if(PayMode){
+                if(PayMode == "Cash"){
                     Msg = "The Amount is "+(BillAmount+(BillAmount*0.05));
-                }else if(PayMode){
-                    Msg = "The Amount is "+(BillAmount+(BillAmount*0.05*0.03));
+                }else if(PayMode == "Card"){
+                    Msg = "The Amount is "+(BillAmount+(BillAmount*0.03)+(BillAmount*0.05));
                 }
                 document.getElementById('Msg').innerHTML = Msg;
             }
            </script>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row my-4">
+            <h2></h2>
         </div>
     </div>
 </body>
