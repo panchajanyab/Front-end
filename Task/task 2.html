@@ -42,9 +42,10 @@
             function SalaryandExperience(){
                 let Salary = Number(document.getElementById('Salary').value);
                 let Experience = Number(document.getElementById('Experience').value);
+                let increment = (Salary*10)/100;
                 let SalaryMsg = "";
                 if(Salary < 30000 && Experience > 3){
-                    SalaryMsg = "The salary is "+(Salary+(Salary*0.3));
+                    SalaryMsg = "The salary is "+(Salary+increment);
                 }else{
                     SalaryMsg = "The salary is "+Salary;
                 }
@@ -70,11 +71,13 @@
             function BAandPM(){
                 let BillAmount = Number(document.getElementById('BillAmount').value);
                 let PayMode = document.getElementById('PayMode').value;
+                let Gst = (BillAmount*5)/100;
+                let cardCharges = (BillAmount*3)/100;
                 let Msg = "";
                 if(PayMode == "Cash"){
-                    Msg = "The Amount is "+(BillAmount+(BillAmount*0.05));
+                    Msg = "The Amount is "+(BillAmount+Gst);
                 }else if(PayMode == "Card"){
-                    Msg = "The Amount is "+(BillAmount+(BillAmount*0.03)+(BillAmount*0.05));
+                    Msg = "The Amount is "+(BillAmount+Gst+cardCharges);
                 }
                 document.getElementById('Msg').innerHTML = Msg;
             }
@@ -83,8 +86,61 @@
     </div>
     <div class="container">
         <div class="row my-4">
-            <h2></h2>
+            <h2>Allowed or Not </h2>
+            <div class="col"><label>Total NO of Days</label></div>
+            <div class="col"><input type="number" class="form-control" id="Days" onkeyup="Checkthwpc()"/></div>
+            <div class="col"><label>days Attended</label></div>
+            <div class="col"><input type="number" class="form-control" id="Attended" onkeyup="Checkthwpc()"/></div>
+            <div class="col"><select id="YesorNo" class="form-control" onkeyup="Checkthwpc()">
+                            <option>Yes</option>
+                            <option>No</option>
+                            </select></div>
+            <div class="col"><label id="Allowed"></label></div>
         </div>
+        <script>
+            function Checkthwpc(){
+                let Days = Number(document.getElementById('Days').value);
+                let Attended = Number(document.getElementById('Attended').value);
+                let YesorNo = document.getElementById('YesorNo').value;
+                 
+                let Allowed = "";
+                if(YesorNo == "Yes" ){
+                    Allowed = "You are Allowed"
+                }else if(YesorNo == "No"){
+                    Allowed = "You are not Allowed"
+                }
+                document.getElementById('Allowed').innerHTML = Allowed;
+            }
+        </script>
+    </div>
+    <div class="container">
+        <div class="row my-4">
+            <h2>Grade System</h2>
+            <div class="col"><label>Enter your Mark</label></div>
+            <div class="col"><input type="number" class="form-control" id="Marks" onkeyup="Checkthemarks()"/></div>
+            <div class="col"><label id="Showthegrade"></label></div>
+        </div>
+        <script>
+            
+            function Checkthemarks(){
+                let Marks = Number(document.getElementById('Marks').value);
+                let Showthegrade = "";
+                if(Marks >=90 && Marks<=100){
+                    Showthegrade = "A";
+                }else if(Marks>=80 && Marks<90){
+                    Showthegrade = "B";
+                }else if(Marks>=70 && Marks<80){
+                    Showthegrade = "c";
+                }else if(Marks>=60 && Marks<70){
+                    Showthegrade = "D";
+                }else if(Marks>=50 && Marks<60){
+                    Showthegrade = "E";
+                }else{
+                    Showthegrade = "F"
+                }
+                document.getElementById('Showthegrade').innerHTML = Showthegrade;
+            }
+        </script>
     </div>
 </body>
 </html>

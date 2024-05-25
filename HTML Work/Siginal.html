@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traffic Signal System with Road Crossing</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="traffic-light">
+      <div class="light red" id="red-light"></div>
+      <div class="light yellow" id="yellow-light"></div>
+      <div class="light green" id="green-light"></div>
+    </div>
+    <div class="road">
+      <div class="crosswalk" id="crosswalk"></div>
+      <div class="car" id="car"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .traffic-light {
+    width: 100px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .light {
+    width: 80px;
+    height: 80px;
+    margin: 10px auto;
+    border-radius: 50%;
+    background-color: #555;
+    opacity: 0.3;
+  }
+  
+  .red {
+    background-color: red;
+  }
+  
+  .yellow {
+    background-color: yellow;
+  }
+  
+  .green {
+    background-color: green;
+  }
+  
+  .active {
+    opacity: 1;
+  }
+  
+  .road {
+    width: 100%;
+    height: 200px;
+    background-color: #444;
+    position: relative;
+  }
+  
+  .crosswalk {
+    width: 100%;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .crosswalk::before, .crosswalk::after {
+    content: '';
+    display: block;
+    height: 20px;
+    background-color: #444;
+    width: 10px;
+    float: left;
+    margin: 0 5px;
+  }
+  
+  .car {
+    width: 50px;
+    height: 30px;
+    background-color: blue;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    transition: left 1s;
+  }
+</style>
+<script>
+    const redLight = document.getElementById('red-light');
+const yellowLight = document.getElementById('yellow-light');
+const greenLight = document.getElementById('green-light');
+const car = document.getElementById('car');
+
+let currentLight = 0;
+
+function changeLight() {
+  switch (currentLight) {
+    case 0:
+      redLight.classList.add('active');
+      yellowLight.classList.remove('active');
+      greenLight.classList.remove('active');
+      stopCar();
+      break;
+    case 1:
+      redLight.classList.remove('active');
+      yellowLight.classList.add('active');
+      greenLight.classList.remove('active');
+      break;
+    case 2:
+      redLight.classList.remove('active');
+      yellowLight.classList.remove('active');
+      greenLight.classList.add('active');
+      startCar();
+      break;
+  }
+
+  currentLight = (currentLight + 1) % 3;
+}
+
+function startCar() {
+  car.style.left = 'calc(100% - 50px)';
+}
+
+function stopCar() {
+  car.style.left = '0';
+}
+
+setInterval(changeLight, 2000); // Change light every 2 seconds
+
+// Initial light setup
+changeLight();
+</script>
+</body>
+</html>

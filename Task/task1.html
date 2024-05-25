@@ -35,9 +35,11 @@
         <h2>Greatest Number of Two Number</h2>
         <div class="row my-4">
             <div class="col"><label>Check the Greated Number</label></div>
-            <div class="col"><input type="number" id="GN" class="form-control" onkeyup="GreatestNO()"/></div>
-            <div class="col"><input type="number" id="GN2" class="form-control" onkeyup="GreatestNO()"/></div>
+            <div class="col"><input type="number" id="GN" class="form-control"></div>
+            <div class="col"><input type="number" id="GN2" class="form-control"></div>
             <div class="col"><span id="GNMsg"></span></div>
+            <div class="col"><button class="btn btn-primary" onclick="GreatestNO()">Check</button></div>
+
         </div>
         <script>
             function GreatestNO(){
@@ -45,9 +47,9 @@
                 let GN2 = Number(document.getElementById('GN2').value);
                 let GNMsg = "";
                 if(GN > GN2){
-                    GNMsg = "The Greater No is "+GN;
+                    GNMsg = "The Greater no is "+GN;
                 }else if (GN2 > GN){
-                    GNMsg = "The Greater NO is " +GN2;
+                    GNMsg = "The Greater nO is " +GN2;
                 }
                 document.getElementById('GNMsg').innerHTML = GNMsg;
             }
@@ -57,10 +59,11 @@
         <h2>Smallest Number of Three Number</h2>
         <div class="row my-4 ">
             <div class="col"><label>Check the Smallest Number</label></div>
-            <div class="Col"><input type="number" id="SN1" class="form-control" onkeyup="SmallestNO()"/></div>
-            <div class="Col"><input type="number" id="SN2" class="form-control" onkeyup="SmallestNO()"/></div>
-            <div class="Col"><input type="number" id="SN3" class="form-control" onkeyup="SmallestNO()"/></div>
+            <div class="Col"><input type="number" id="SN1" class="form-control"></div>
+            <div class="Col"><input type="number" id="SN2" class="form-control" ></div>
+            <div class="Col"><input type="number" id="SN3" class="form-control" ></div>
             <div class="col"><span id="SNoMsg"></span></div>
+            <div class="col"><button class="btn btn-primary" onclick="SmallestNO()">Check</button></div>
         </div>
         <script>
             function SmallestNO(){

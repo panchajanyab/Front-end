@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ 
+    <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row" style="height: 100px;">
+    <div class="col-2 border  border-danger"id="s1">s1</div>
+    <div class="col-2 border  border-danger"id="s2">s2</div>
+    <div class="col-2 border  border-danger"id="s3">s3</div>
+    <div class="col-2 border  border-danger"id="s4">s4</div>
+    <div class="col-2 border  border-danger"id="s5">s5</div>
+</div>
+</div><br>
+<select id="parking">
+<option>s1</option>
+<option>s2</option>
+<option>s3</option>
+<option>s4</option>
+<option>s5</option>
+</select><br><br>
+<label>Vehicle number</label>
+<input type="number" id="vehicle">
+<button onclick="simplepark()">booknow</button><br>  
+<script>
+function simplepark(){
+  let s1=document.getElementById("s1")
+  let s2=document.getElementById("s2")
+  let s3=document.getElementById("s3")
+  let s4=document.getElementById("s4")
+  let s5=document.getElementById("s5")
+  let vehicle=document.getElementById("vehicle").value
+  let parking=document.getElementById("parking").value
+
+
+if(parking == "s1")
+{
+s1.textContent=vehicle+"booked";
+s1.style.backgroundColor="green"
+}
+else if(parking == "s2"){
+s2.textContent=vehicle+"booked";
+s2.style.backgroundColor="green"
+}
+else if(parking == "s3"){
+s3.textContent=vehicle+"booked";
+s3.style.backgroundColor="green"
+}
+else if(parking == "s4"){ 
+s4.textContent=vehicle+"booked";
+s4.style.backgroundColor="green"
+}
+else if(parking == "s5"){
+s5.textContent=vehicle+"booked";
+s5.style.backgroundColor="green"
+}
+else{
+alert("please book the correct slot")
+}
+}
+</script>
+</body>
+</html>
