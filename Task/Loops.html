@@ -58,5 +58,25 @@
             }console.log(sum);
         }
     </script>
+    <h1>even Number in the Range</h1>
+    <div class="row">
+        <div class="col"><label>Enter the Number</label></div>
+        <div class="col"><input type="number" class="form-control" id="Num1"></div>
+        <div class="col"><input type="number" class="form-control" id="Num2"></div>
+        <div class="col"><button type="button" class="btn btn-primary" onclick="EvenNo()">Submit</button></div>
+    </div>
+    <script>
+        function EvenNo(){
+        let Num1 = Number(document.getElementById('Num1').value);
+        let Num2 = Number(document.getElementById('Num2').value);
+        let result = " ";
+        for(let No=Num1;No<=Num2;No++){
+            result = Number((No%2)==0);
+            console.log(result);
+        }
+      
+    }
+    </script>
+    <h1></h1>
 </body>
 </html>
