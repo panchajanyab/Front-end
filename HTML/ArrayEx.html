@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Array Example</h2>
+        <p id="aarOp"></p>
+        <script>
+            arrEx();
+            function arrEx(){
+             let aarOp = "";
+             let Students = ["Saran","Vishal","Magesh","Kani","Saran","Ranjani"];
+             
+             aarOp = aarOp + "Students : " + Students + "<br>";
+             aarOp = aarOp + "Array Length : " + Students.length + "<br>";
+             aarOp += "push Jai : " +Students.push("jai") + "<br>";
+             aarOp += "push Ram : " + Students.push("Ram") +"<br>";
+             aarOp = aarOp + "Students : " + Students + "<br>";
+             aarOp += "Pop : " +Students.pop() + "<br>";
+             aarOp = aarOp + "Students : " + Students +"<br>";
+             aarOp = "Reverse : " + Students.reverse() + "<br>";
+             aarOp = aarOp + "Students : " + Students +"<br>";
+             aarOp = "sort : " + Students.sort() + "<br>";
+             aarOp = aarOp + "Students : " + Students + "<br>";
+             aarOp += "include Magesh : " + Students.includes("Magesh") + "<br>";
+             aarOp += "include Sakthi : " + Students.includes("Sakthi") + "<br>";
+             aarOp += "index of Saren : " + Students.indexOf("Saran") + "<br>";
+             aarOp += "last index od Saran : " + Students.lastIndexOf("Saran") + "<br>";
+             aarOp += "Join * : " + Students.join("*") + "<br>";
+             //aarOp = aarOp + "Students : " + Students + "<br>";
+
+             document.getElementById('aarOp').innerHTML = aarOp;
+             console.log(Students);
+             console.log(Students[5]);
+            }
+        </script>
+    </div>
+</body>
+</html>
