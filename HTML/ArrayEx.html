@@ -31,11 +31,25 @@
              aarOp += "index of Saren : " + Students.indexOf("Saran") + "<br>";
              aarOp += "last index od Saran : " + Students.lastIndexOf("Saran") + "<br>";
              aarOp += "Join * : " + Students.join("*") + "<br>";
-             //aarOp = aarOp + "Students : " + Students + "<br>";
-
+             aarOp += "concat Prasanth Sureka : " + Students.concat(["Prasanth","Sureka"]) + "<br>";
+             aarOp = aarOp + "Students : " + Students + "<br>";
+             aarOp += "Fill : " + Students.fill("#",2,5) + "<br>";
+             aarOp = aarOp + "Students : " + Students + "<br>";
+             aarOp += "To String : " + Students.toString() + "<br>";
+             aarOp = aarOp + "Students :" + Students + "<br>";
+             aarOp += "Slice 4 6 : " + Students.slice(4,6) + "<br>";
+             aarOp = aarOp + "Students :" + Students + "<br>";
+             aarOp += "Splice 3 Dhoni : " + Students.splice(3,0,"Dhoni") + "<br>";
+             aarOp = aarOp + "Students :" + Students + "<br>";
+             aarOp += "Splice 2 Kholi : " + Students.splice(2,1,"kholi") + "<br>";
+             aarOp = aarOp + "Students :" + Students + "<br>";
              document.getElementById('aarOp').innerHTML = aarOp;
              console.log(Students);
              console.log(Students[5]);
+             Students[7] = "Jayan";
+             console.log(Students);
+             Students[8] = "Arun";
+             console.log(Students);
             }
         </script>
     </div>
