@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>String</h2>
+        <p id="value"></p>
+        <script>
+            Task()
+            function Task(){
+                let value = "";
+                let name = "   This is panchajanya ";
+                value += name + "<br>";
+                value += "The value Start with i : " + name.startsWith("i") + "<br>";
+                value += "The value Start With T : " +name.startsWith("T") + "<br>";
+                value += "The value Ends with P : " + name.endsWith("p") + "<br>";
+                value += "The vlue ends with A : " + name.endsWith("a") + "<br>";
+                value += "Repeat the value : " + name.repeat(5) + "<br>";
+                value += "check th CharAt : " + name.charAt(5) + "<br>";
+                value += "Trim : " + name.trim()+ "<br>"; 
+
+                document.getElementById('value').innerHTML = value;
+            }
+        </script>
+    </div>
+</body>
+</html>
