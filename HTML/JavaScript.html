@@ -72,9 +72,9 @@
 
     <div class="row">
         <h2>Events and <span onclick="showMsg()"> DOM</span></h2>
-        <div class="col">
+        <!-- <div class="col">
             <img src="./Asseerts/login.jpg" onclick="showMsg()"/>
-        </div>
+        </div> -->
         <div class="col">
             <input type="text" name="username" id="username" class="form-control" placeholder="User Name" />
         </div>
@@ -147,6 +147,44 @@
             msg = "baby";
          }
          document.getElementById('ageCalcMsg').innerHTML = msg; 
+        }
+    </script>
+</div>
+<div>
+    <h2>String</h2>
+    <p id="StrMsg"></p>
+    <script>
+        StrEx()
+        function StrEx(){
+            let StrMsg = "";
+            let Str = " Hai Hellow, How are You ? ";
+            StrMsg += "String  : " +Str + "<br>";
+            StrMsg += "String Length : " + Str.length + "<br>";
+            StrMsg += "String Index of H : " +Str.indexOf('H') + "<br>";
+            StrMsg += "String Last Index of H : " + Str.lastIndexOf('H') + "<br>";
+            StrMsg += "String includes How : " + Str.includes ("How") + "<br>";
+            StrMsg += "String incldes why : " +Str.includes("why") +"<br>";
+            StrMsg += "String replace buddies : " + Str.replace('buddies','folks') + "<br>";
+            StrMsg += "String  : " +Str + "<br>";
+            StrMsg += "String Startswith Hai : " + Str.startsWith("Hai") + "<br>";
+            StrMsg += "String EndsWidth ? : " + Str.endsWith("?") + "<br>"; 
+            StrMsg += "String SubString 10,18 : " +Str.substring(10,18) + "<br>";
+            StrMsg += "String Slice 10,18 : " +Str.slice(10,18) + "<br>";
+            StrMsg += "String  : " +Str + "<br>";
+            StrMsg += "String to LowerCase : " +Str.toLowerCase() + "<br>";
+            StrMsg += "String to UpperCase : " +Str.toUpperCase() + "<br>";
+            StrMsg += "String repeat 3 : " + Str.repeat(3) + "<br>";
+            StrMsg += "String : " +Str + "<br>";
+            StrMsg += "String CharAt 6  : " +Str.charAt(6) +"<br>";
+            StrMsg += "String Concat Welcome  : " +Str.concat("Welcome") + "<br>";
+            StrMsg += "String Split By Space : " +Str.split('') + "<br>";
+            console.log(Str.split(''));
+            StrMsg += "String  trim : " + Str.trim() + "<br>";
+            console.log(Str);
+            console.log(Str.trim());
+            StrMsg += "String : " + Str + "<br>";
+            
+            document.getElementById("StrMsg").innerHTML = StrMsg;
         }
     </script>
 </div>
