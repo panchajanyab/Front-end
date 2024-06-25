@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Oops Example</h2>
+    </div>
+    <script>
+        class Person
+        {
+            personName= "";
+            age=0;
+            aadhar=0;
+            setAadhar(aadhar){
+                this.aadhar = aadhar;
+            }
+            setPersonName(personName){
+                this.personName = personName;
+            }
+            setage(age){
+                this.age = age;
+            }
+            displayPersonDetails(){
+                console.log(this.personName,this.age,this.aadhar);
+            }
+
+        }
+        let person = new Person();
+        person.setPersonName("Panchajanya");
+        person.setage(22);
+        person.setAadhar(977511454136);
+        person.displayPersonDetails();
+
+        class Student extends Person
+        {
+            StudentId = 0;
+            InstituteName  = " ";
+            Course = "";
+
+            registerStudent(StudentId){
+                this.StudentId = StudentId;
+                console.log(this.StudentId + " You have been Register Sucessfully");
+            }
+            allocateCourse(CourseName){
+                this.Course = CourseName;
+                console.log(this.Course + " This course has been allocated");
+            }
+            displayStudentInfo(){
+                console.log(this.personName,this.age,this.aadhar,this.InstituteName,this.Course);
+            }
+            constructor(InstituteName){
+                super()
+                this.InstituteName = InstituteName;
+            }
+        }
+        let student = new Student();
+        student.setPersonName("Deepak");
+        student.setage(21);
+        student.setAadhar(9147288415);
+        student.registerStudent(2154);
+        student.allocateCourse("fullStract");
+        
+    </script>
+</body>
+</html>
