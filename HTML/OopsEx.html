@@ -64,6 +64,40 @@
         student.registerStudent(2154);
         student.allocateCourse("fullStract");
         
+        class Candiate extends Student
+        {
+            candiateId=0;
+            companyName= "";
+
+            scheduleInterview(){
+                console.log("interview Schedule for " + this.candiateId + " in " + this.companyName);
+            }
+            interviewResult(result){
+                try{
+                    if(!result){
+                        throw new Error("interview Failed");
+                    }
+                }catch(er){
+                    console.log(er);
+                    alert("something went Wrong..");
+                }
+            }
+            constructor(candiateId,companyName,InstituteName){
+                super(InstituteName);
+                this.candiateId = candiateId;
+                this.companyName = companyName
+            }
+        }
+        let candiate = new Candiate(214,"Amazon","besant");
+        candiate.setPersonName("Nadha");
+        candiate.setage(22);
+        candiate.setAadhar(987256144253);
+        candiate.registerStudent(5412);
+        candiate.allocateCourse("Backend");
+        candiate.displayPersonDetails();
+        candiate.displayStudentInfo();
+        candiate.scheduleInterview();
+        candiate.interviewResult(true);
     </script>
 </body>
 </html>

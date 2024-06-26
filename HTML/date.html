@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Topics</title>
+</head>
+<body>
+    <div>
+        <h2>Js Topics</h2>
+
+        <div>
+            <h3>Date</h3>
+            <p id="clck"></p>
+            <p id="dateMsg"></p>
+            <script>
+                setInterval(()=>{
+                    let dt = new Date();
+                    document.getElementById('clck').innerHTML = dt.getHours() + " : " + dt.getMinutes() + " : " + dt.getSeconds();
+                },1000);
+                dateEx();
+                function dateEx(){
+                    let dt = new Date();
+                    let dateMsg = document.getElementById('dateMsg');
+                    let result = "";
+
+                    result += "Date : " + dt + "<br>";
+                    result += "Date.now : " + Date.now() + "<br>";
+                    result += "Year : " + dt.getFullYear() + "<br>";
+                    result += "Month : " + dt.getMonth() + "<br>";
+                    result += "Day : " + dt.getDay() + "<br>";
+                    result += "Date : " + dt.getDate() + "<br>";
+                    result += "Hours : " + dt.getHours() + "<br>";
+                    result += "Mins : " + dt.getMinutes() + "<br>";
+                    result += "Milliseconds : " + dt.getMilliseconds() + "<br>";
+                    result += "Time : " + dt.getTime() + "<br>";
+                    result += "Set Year 2025 : " + dt.setFullYear(2025) + "<br>";
+                    result += "Date : " + dt + "<br>";
+                    result += "Set Month : " + dt.setMonth(10) + "<br>";
+                    result += "Date : " + dt + "<br>";
+                    result += "Set Date : " + dt.setDate(28) + "<br>";
+                    result += "Date : " + dt + "<br>";
+                    result += "Set Hour : " + dt.setHours(5) + "<br>";
+                    result += "Date : " + dt + "<br>";
+                    result += "Set Mins : " + dt.setMinutes(49) + "<br>";
+                    result += "Date : " + dt + "<br>";
+                    result += "Set Seconds : " + dt.setSeconds(59) + "<br>";
+                    result += "Date : " + dt + "<br>";
+
+
+                    let day7 = 24 * 60 * 60 * 1000 * 7;
+                    result += "7 days Milliseconds : " + day7 + "<br>";
+                    dt.setTime(dt.getTime()+day7);
+                    result += "Added Date : " + dt + "<br>";
+
+                    
+                    dateMsg.innerHTML = result;
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
