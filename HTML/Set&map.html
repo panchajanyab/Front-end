@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Set & Map</h2>
+        <script>
+            setEx();
+            function setEx(){
+                let st = new Set();
+                st.add("AA");
+                st.add("ZZ");
+                st.add("BBB");
+                //st.add("ZZ");
+                console.log(st);
+                console.log(st.has("XXX"));
+                console.log(st.delete("ZZ"));
+                console.log(st.has("ZZ"));
+                console.log(st);
+                st.forEach(data=>console.log(data));
+                console.log(st.entries());
+                console.log(st.clear());
+                console.log(st);
+
+            }
+        </script>
+    </div>
+</body>
+</html>

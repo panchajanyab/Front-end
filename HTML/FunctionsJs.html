@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Functions</h2>
+        <p id="counter"></p>
+        <script>
+            function nameFunction(msg){
+                console.log("printing :" + msg);
+            }
+            nameFunction("calling main Function")
+            let arrowFunc = () =>{console.log("Arrow Function")};
+            arrowFunc();
+             let arr = [1,2,3,4];
+             console.log(arr);
+             console.log(arr.filter((ele)=>{return (ele%2)==0;}));
+            
+             console.log(arr.map((ele)=>{return ele*2;}));
+             console.log(arr.forEach((ele)=>{console.log(ele*2);}));
+             //for of floop
+             for(let ele of arr){
+                 console.log(ele);
+             }
+             //normal for loop
+             for(let idx=0;idx<arr.length;idx++){
+                 console.log(arr[idx]);
+             }
+             console.log(arr.some((ele)=>{return(ele%2)==0;}));
+             console.log(arr.every((ele)=>{return (ele%2)==0;}));
+
+             function outerFunction(){
+                function innerFunction(){
+                    console.log("innerFunction");
+                }
+                console.log("outerFunction");
+                innerFunction();
+             }
+             outerFunction();
+             function closureFunc(amt){
+                amt++;
+                function printAmt(){
+                    console.log(amt);
+                }
+                return printAmt;
+             }
+             let printAmtFunc = closureFunc(10);
+             printAmtFunc();
+
+             function callbackFun(){
+                console.log("callback");
+             }
+             function callbackbaseFun(){
+                setTimeout(()=>{
+                    console.log("waited for 2 second");
+                    callbackFun();
+                },2000);
+             }
+             callbackbaseFun(callbackFun);
+             function recursiveFunc(num){
+                num++;
+                console.log(sum);
+                if(num!=0){
+                    recursiveFunc(num);
+                }
+             }
+             recursiveFunc(1);
+             function printcounter(){
+                let sec = 0;
+                let min = 0;
+                setInterval(()=>{
+                    sec++;
+                    if(sec == 60){
+                        min++;
+                        sec = 0;
+                    }
+                document.getElementById("counter");},1000);
+             }
+             printcounter();
+
+        </script>
+    </div>
+</body>
+</html>
