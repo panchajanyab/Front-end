@@ -25,7 +25,27 @@
                 console.log(st.entries());
                 console.log(st.clear());
                 console.log(st);
-
+            }
+            mapEx();
+            function mapEx(){
+                let mp = new Map();
+                mp.set(1,"AAA");
+                mp.set(2,"CCC");
+                mp.set(3,"CCC");
+                mp.set(4,"GG");
+                console.log(mp);
+                console.log(mp.has(2));
+                console.log(mp.has(10));
+                console.log(mp.delete(3));
+                console.log(mp);
+                console.log(mp.get(4));
+                mp.set(4,"YYY");
+                console.log(mp.get(4));
+                console.log(mp.keys());
+                console.log(mp.values());
+                console.log(mp.size);
+                mp.clear();
+                console.log(mp);
             }
         </script>
     </div>
