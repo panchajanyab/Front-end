@@ -188,5 +188,69 @@
         }
     </script>
 </div>
+<div>
+    <h2>switch</h2>
+    <div class="row m-4">
+        <div class="col">
+            <input type="number" id="calcNum1" class="form-control" placeholder="Number 1"/>
+            <input type="number" id="calcNum2" class="form-control" placeholder="Number 2"/>
+
+            <input type="text" id="calcCategory" class="form-control" placeholder="Enter the Category"/>
+        </div>
+        <div>
+            <select id="calCatSelect" class="form-control" onchange="getResultOnChange()">
+                <option>--Select--</option>
+                <option value="add">Add</option>
+                <option value="sub">Sub</option>
+                <option value="mul">Mul</option>
+                <option value="div">Div</option>
+            </select>
+        </div>
+        <div class="col"><button type="button" class="btn btn-primary" onclick="freeTypeCalc()">Get Result</button></div>
+        <div class="col"><button type="button" class="btn btn-primary" onclick="calc('add')">Add</button></div>
+        <div class="col"><button type="button" class="btn btn-primary" onclick="calc('sub')">Sub</button></div>
+        <div class="col"><button type="button" class="btn btn-primary" onclick="calc('mul')">Mul</button></div>
+        <div class="col"><button type="button" class="btn btn-primary" onclick="calc('div')">Div</button></div>
+    </div>
+    <div class="row m-4">
+        <span id="calcMsg"></span>
+    </div>
+    <script>
+        function getResultOnChange(){
+            let calcCategory = document.getElementById('calCatSelect').value;
+            calc(calcCategory);
+        }
+        function freeTypeCalc(){
+            let calcCategory = document.getElementById('calCatSelect').value;
+            calc(calcCategory);
+        }
+        function calc(Category){
+            let calcNum1 = Number(document.getElementById('calcNum1').value);
+            let calcNum2 = Number(document.getElementById('calcNum2').value);
+            let result = 0;
+            switch(Category){
+                case 'add':
+                    result = calcNum1 + calcNum2;
+                    console.log(result);
+                    break;
+                case 'sub':
+                    result = calcNum1 - calcNum2;
+                    console.log(result);
+                    break;
+                case 'mul':
+                    result = calcNum1 * calcNum2;
+                    console.log(result);
+                    break;
+                case 'div':
+                    result = calcNum1 / calcNum2;
+                    console.log(result);
+                    break;
+                default:
+                    result = "invalid category. Please give either add/sub/mul/div";
+            }
+            document.getElementById('calcMsg').innerHTML = result;
+        }
+    </script>
+</div>
 </body>
 </html>
