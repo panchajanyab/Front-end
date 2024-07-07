@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+       <h2 style="text-align: center;"><u>Login</u></h2>
+       <form action="./aboutUs.html" method="post">
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr>
+                <td><input type="text" name="uName" id="uName" placeholder="USERNAME"/></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="pswd" id="pswd" placeholder="PASSWORD"/></td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="text-align: center;">
+                        <button type="button" onclick="checkLogin()" >Login</button>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="text-align: center;">New User?<p>
+                    <p style="text-align: center;"><a href="./JavaScript.html">Register Here</a></p>
+                    </p>
+                </td>
+            </tr>
+        </table>
+       </form>
+    </div>
+    <script src="./Session.js"></script>
+    <script>
+        function checkLogin(){
+            let uName = document.getElementById('uName').value;
+            let pswd = document.getElementById('pswd').value;
+
+            let sess = new UserSession();
+            sess.checkLogin(uName,pswd);
+            
+            if(uName == 'panchajanya' && pswd == '12345'){
+               sessionStorage.setItem('USER');
+                window.location.href='./aboutUs.html';
+            }else{
+                sessionStorage.removeItem('USER');
+                alert('invalid UserName/Password');
+            }
+        }
+    </script>
+</body>
+</html>
