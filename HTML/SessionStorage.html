@@ -33,8 +33,19 @@
         </table>
        </form>
     </div>
-    <script src="./Session.js"></script>
+    <!-- <script src="./Session.js"></script> -->
     <script>
+       class UserSession{
+    checkLogin(uName,pswd){
+        if(uName == 'santhosh' && pswd == 'man'){
+            localStorage.setItem('user',uName)
+            window.location.href = './aboutus.html';
+        }else{
+            localStorage.removeItem('USER');
+            alert('invalid Username/Password');
+        }
+    }
+}
         function checkLogin(){
             let uName = document.getElementById('uName').value;
             let pswd = document.getElementById('pswd').value;
@@ -42,13 +53,13 @@
             let sess = new UserSession();
             sess.checkLogin(uName,pswd);
             
-            if(uName == 'panchajanya' && pswd == '12345'){
-               sessionStorage.setItem('USER');
-                window.location.href='./aboutUs.html';
-            }else{
-                sessionStorage.removeItem('USER');
-                alert('invalid UserName/Password');
-            }
+            // if(uName == 'panchajanya' && pswd == '12345'){
+            //    sessionStorage.setItem('USER');
+            //     window.location.href='./aboutUs.html';
+            // }else{
+            //     sessionStorage.removeItem('USER');
+            //     alert('invalid UserName/Password');
+            // }
         }
     </script>
 </body>
