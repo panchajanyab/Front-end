@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Practice</h1>
+        <h3>Array</h3>
+        <p id="result"></p>
+        <script>
+            arrex();
+            function arrex(){
+                let result = "";
+                let students = ["saran","vishal","santhosh",];
+
+                result = result + "students : " + students + "<br>";
+                result = result + "Array length : " + students.length + "<br>";
+                result += "push :" + students.push("jai") + "<br>";
+                result = result + "Students : " + students + "<br>";
+                result += "pop : " + students.pop() + "<br>";
+                result = result + "students : " + students +"<br>"; 
+                result += "reverse : " + students.reverse() +"<br>";
+                result = result + "students : " + students +"<br>"; 
+                result = "sort : " + students.sort() +  "<br>";
+                result = result + "students : " + students +"<br>"; 
+                result += "includes panchi : " + students.includes("panchi") + "<br>";
+                result += "includes : " + students.includes("mam") +"<br>";
+                result += "includes mam : " + students.includes("mam") + "<br>";
+                result = result + "students : " + students +"<br>"; 
+                
+                document.getElementById('result').innerHTML = result;
+                console.log(students);
+                console.log(students[3])
+            }
+        </script>
+    </div>
+</body>
+</html>
